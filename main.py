@@ -30,3 +30,8 @@ def display_hint(hint):
     pass
 def display_answer(answer):
     pass
+def main():
+    pass
+
+if __name__ == "__main__":
+    main()
