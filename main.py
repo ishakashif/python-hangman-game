@@ -26,3 +26,7 @@ hangman_art = {0:("   ",
 
 def display_man(wrong_guesses):
     pass
+def display_hint(hint):
+    pass
+def display_answer(answer):
+    pass
