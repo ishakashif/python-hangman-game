@@ -23,3 +23,6 @@ hangman_art = {0:("   ",
                6:(" ○ ",
                   "/︳\\",
                   "/ \\")}
+
+for line in hangman_art[6]:
+    print(line)
