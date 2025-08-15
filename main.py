@@ -32,6 +32,17 @@ def display_answer(answer):
     pass
 def main():
     answer = random.choice(words)
+    hint = " ".join("_" * len(answer))
+    print(hint)
+    wrong_guesses = 0
+    guessed_letters = set()
+    is_running = True
+
+    while is_running:
+        display_man(wrong_guesses)
+        display_hint(hint)
+        guess = input("Enter a letter: ")
+    display_answer(answer)
 
 
 if __name__ == "__main__":
