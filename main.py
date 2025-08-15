@@ -82,6 +82,9 @@ def main():
         display_man(wrong_guesses)
         display_hint(hint)
         guess = input("Enter a letter: ")
+        if len(guess) > 1:
+            print("Invalid input")
+            continue
         if guess in answer:
             for i in range(len(answer)):
                 if answer[i] == guess:
