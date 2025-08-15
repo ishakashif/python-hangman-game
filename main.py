@@ -31,7 +31,8 @@ def display_hint(hint):
 def display_answer(answer):
     pass
 def main():
-    pass
+    answer = random.choice(words)
+
 
 if __name__ == "__main__":
     main()
