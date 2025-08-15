@@ -85,6 +85,10 @@ def main():
         if len(guess) > 1 or not guess.isalpha():
             print("Invalid input")
             continue
+        if guess in guessed_letters:
+            print(f"You already guessed '{guess}'")
+            continue
+        guessed_letters.add(guess)
         if guess in answer:
             for i in range(len(answer)):
                 if answer[i] == guess:
