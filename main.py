@@ -82,7 +82,7 @@ def main():
         display_man(wrong_guesses)
         display_hint(hint)
         guess = input("Enter a letter: ")
-        if len(guess) > 1:
+        if len(guess) > 1 or not guess.isalpha():
             print("Invalid input")
             continue
         if guess in answer:
