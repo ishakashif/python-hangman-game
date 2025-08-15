@@ -1,76 +1,6 @@
 # Hangman in Python
 import random
-words = ("apple", "orange", "banana", "coconut", "pineapple")
-
-#dictionary of key: ()
-hangman_art = {0:("   ",
-                  "   ",
-                  "   "),
-               1:(" ○ ",
-                  "   ",
-                  "   "),
-               2:(" ○ ",
-                  " ︳ "),
-               3:(" ○ ",
-                  "/︳ ",
-                  "   "),
-               4:(" ○ ",
-                  "/︳\\",
-                  "   "),
-               5:(" ○ ",
-                  "/︳\\",
-                  "/  "),
-               6:(" ○ ",
-                  "/︳\\",
-                  "/ \\")}
-
-def display_man(wrong_guesses):
-    print("****************")
-    for line in hangman_art[wrong_guesses]:
-        print(line)
-    print("****************")
-def display_hint(hint):
-    print(hint)
-def display_answer(answer):
-    pass
-def main():
-    answer = random.choice(words)
-    hint = " ".join("_" * len(answer))
-    wrong_guesses = 0# Hangman in Python
-import random
-words = ("apple", "orange", "banana", "coconut", "pineapple")
-
-#dictionary of key: ()
-hangman_art = {0:("   ",
-                  "   ",
-                  "   "),
-               1:(" ○ ",
-                  "   ",
-                  "   "),
-               2:(" ○ ",
-                  " ︳ "),
-               3:(" ○ ",
-                  "/︳ ",
-                  "   "),
-               4:(" ○ ",
-                  "/︳\\",
-                  "   "),
-               5:(" ○ ",
-                  "/︳\\",
-                  "/  "),
-               6:(" ○ ",
-                  "/︳\\",
-                  "/ \\")}
-
-def display_man(wrong_guesses):
-    print("****************")
-    for line in hangman_art[wrong_guesses]:
-        print(line)
-    print("****************")
-def display_hint(hint):
-    print(" ".join(hint))
-def display_answer(answer):
-    print(" ".join(answer))
+from functions import *
 def main():
     answer = random.choice(words)
     hint = ["_"] * len(answer)
@@ -97,9 +27,21 @@ def main():
             wrong_guesses += 1
         if "_" not in hint:
             display_man(wrong_guesses)
-            display_answer(answer)
+            display_answer(answer.upper())
             print("YOU WIN!")
+            play_again = input("Would you like to play again? (Y/N): ")
+            if play_again.upper() != 'Y':
+                is_running = False
+        elif wrong_guesses >= len(hangman_art) - 1:
+            display_man(wrong_guesses)
+            display_answer(answer.upper())
+            print("YOU LOSE!")
             is_running = False
+            play_again = input("Would you like to play again? (Y/N): ")
+            if play_again.upper() != 'Y':
+                is_running = False
+
+
 
 
 if __name__ == "__main__":
