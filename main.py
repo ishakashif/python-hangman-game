@@ -1,6 +1,7 @@
 # Hangman in Python
 import random
 from functions import *
+from words import *
 def main():
     answer = random.choice(words)
     hint = ["_"] * len(answer)
