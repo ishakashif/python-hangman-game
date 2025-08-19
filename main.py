@@ -30,17 +30,21 @@ def main():
             display_man(wrong_guesses)
             display_answer(answer.upper())
             print("YOU WIN!")
-            play_again = input("Would you like to play again? (Y/N): ")
-            if play_again.upper() != 'Y':
+            is_running = False
+            playing_again = input("Would you like to play again? (Y/N): ")
+            if playing_again.upper() == 'Y':
+                play_again()
+            else:
                 is_running = False
         elif wrong_guesses >= len(hangman_art) - 1:
             display_man(wrong_guesses)
             display_answer(answer.upper())
             print("YOU LOSE!")
             is_running = False
-            play_again = input("Would you like to play again? (Y/N): ")
-            if play_again.upper() != 'Y':
-                is_running = False
+            playing_again = input("Would you like to play again? (Y/N): ")
+            if playing_again.upper() == 'Y':
+                play_again()
+
 
 
 

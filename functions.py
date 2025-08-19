@@ -1,3 +1,5 @@
+import random
+
 words = ("apple", "orange", "banana", "coconut", "pineapple")
 
 #dictionary of key: ()
@@ -31,3 +33,9 @@ def display_hint(hint):
     print(" ".join(hint))
 def display_answer(answer):
     print(" ".join(answer))
+def play_again():
+    is_running = True
+    answer = random.choice(words)
+    hint = ["_"] * len(answer)
+    wrong_guesses = 0
+    guessed_letters = set()
