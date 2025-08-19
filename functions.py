@@ -34,7 +34,6 @@ def display_hint(hint):
 def display_answer(answer):
     print(" ".join(answer))
 def play_again():
-    is_running = True
     answer = random.choice(words)
     hint = ["_"] * len(answer)
     wrong_guesses = 0
