@@ -33,8 +33,4 @@ def display_hint(hint):
     print(" ".join(hint))
 def display_answer(answer):
     print(" ".join(answer))
-def play_again():
-    answer = random.choice(words)
-    hint = ["_"] * len(answer)
-    wrong_guesses = 0
-    guessed_letters = set()
+
